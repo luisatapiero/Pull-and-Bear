@@ -7,6 +7,8 @@
     <title>Sale Products - Cards
     </title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.scss">
+
 
 </head>
 <body>
@@ -26,7 +28,7 @@
             <div class="options-menu">
               <ul>
                 <li><a class="nav-item" href="./index.html">NEW</a></li >
-                  <li><a class="nav-item" href="./Secondpage.html">SALES</a></li >
+                  <li><a class="nav-item" href="./sales.html">SALES</a></li >
                 <li class="nav-item">CLOTHING</li>
                 <li class="nav-item">SHOES</li>
                 <li class="nav-item">UNISEX</li>
@@ -58,15 +60,41 @@
           </li>
 
           <li class="nav-item">
-            <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M1.78112 7.66929C1.76749 6.63166 2.56708 5.77877 3.56766 5.76367H14.2869C15.2875 5.77877 16.0871 6.63166 16.0734 7.66929V16.2446C16.1013 18.3201 14.5017 20.0262 12.5003 20.0558H5.3542C3.35281 20.0262 1.7533 18.3201 1.78112 16.2446V7.66929Z"
-                stroke="#FAFBFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M12.5005 8.62248V4.81124C12.5283 2.73574 10.9288 1.02961 8.92744 1C6.92605 1.02961 5.32654 2.73574 5.35436 4.81124V8.62248"
-                stroke="#FAFBFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </li>
+            <div class="cart-notification">3</div>
+            <div>
+              <div>
+                <ul>
+                  <li class="submenu">
+                    <svg id="img carrito" alt="carrito" width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1.78112 7.66929C1.76749 6.63166 2.56708 5.77877 3.56766 5.76367H14.2869C15.2875 5.77877 16.0871 6.63166 16.0734 7.66929V16.2446C16.1013 18.3201 14.5017 20.0262 12.5003 20.0558H5.3542C3.35281 20.0262 1.7533 18.3201 1.78112 16.2446V7.66929Z"
+                        stroke="#FAFBFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M12.5005 8.62248V4.81124C12.5283 2.73574 10.9288 1.02961 8.92744 1C6.92605 1.02961 5.32654 2.73574 5.35436 4.81124V8.62248"
+                        stroke="#FAFBFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    <div id="carrito">
+                      <table id="lista-carrito">
+                        <thead>
+                          <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                      <a href="#" id="vaciar-carrito" class="btn-3">Vaciar Carrito</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+         <!-- Esto es un comentario  </li>-->
+
+          <div></div>
+
         </header>
 
         <section class="hero">
@@ -194,4 +222,6 @@
 </body>
 <script type="module" src="../json.js"></script>
 <script type="module" src="../index.js"></script>
+<script type="module" src="./carrito.js"></script>
+
 </html>
