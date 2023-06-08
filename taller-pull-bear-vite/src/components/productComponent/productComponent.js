@@ -199,6 +199,7 @@ class ProductComponent extends HTMLElement {
 
       localStorage.setItem('cart-products', JSON.stringify(products));
     });
+    
 
   }
 
