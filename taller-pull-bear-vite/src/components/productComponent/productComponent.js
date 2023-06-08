@@ -29,7 +29,8 @@ class ProductComponent extends HTMLElement {
 
     const carousel = this.shadowRoot.querySelector(".carousel"),
       firstImg = carousel.querySelectorAll("img")[0],
-      arrowIcons = this.shadowRoot.querySelectorAll(".wrapper i");
+      arrowIcons = this.shadowRoot.querySelectorAll(".wrapper i"),
+      addToBagBtn = this.shadowRoot.querySelector(".btn-add-to-cart");
 
     let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
 
@@ -178,7 +179,26 @@ class ProductComponent extends HTMLElement {
       console.log('fuera');
     });
     
-    
+    addToBagBtn.addEventListener('click', () => {
+      let products = [];
+
+      if (localStorage.getItem("cart-products"))
+        products = JSON.parse(localStorage.getItem("cart-products"));
+
+      const currentProd = products.find(prod => prod.name === this.name);
+
+      if (currentProd) {
+        const amount = parseInt(currentProd.quantity)
+        currentProd.quantity = amount + parseInt(inputQuantity.value);
+      } else {
+        products.push({
+          quantity: parseInt(inputQuantity.value),
+          name: this.name
+        });
+      }
+
+      localStorage.setItem('cart-products', JSON.stringify(products));
+    });
 
   }
 
